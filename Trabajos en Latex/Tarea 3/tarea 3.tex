@@ -1,0 +1,58 @@
+\documentclass[a4,10pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage[
+backend=biber,
+style=ieee,
+]{biblatex}
+
+\addbibresource{ref.bib}
+
+\pagestyle{fancy}
+\fancyhead[LO,L]{ FINESI}
+\fancyhead[CO,C]{Software Engineering}
+\fancyhead[RO,R]{\today}
+\fancyfoot[LO,L]{Fred Torres-Cruz}
+\fancyfoot[CO,C]{}
+\fancyfoot[RO,R]{Page. \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{Software Engineering}
+
+\begin{document}
+
+\section{Caesar Cipher Encryption}
+\subsection{Introduction}
+The Caesar Cipher is one of the earliest known and simplest encryption techniques. Named after Julius Caesar, who is said to have used it to protect his private correspondence, the cipher involves shifting each letter of the plaintext by a fixed number of positions down the alphabet. Despite its simplicity, the Caesar Cipher represents a fundamental concept in cryptography and serves as the basis for more complex encryption algorithms.
+\subsection{Methodology}
+
+The Caesar Cipher operates by substituting each letter in the plaintext with a letter that is a fixed number of positions down the alphabet. The encryption process can be summarized as follows:\\
+1. Choose a shift value (often denoted as 'k') which represents the number of positions each letter will be shifted.\\
+2. For each letter in the plaintext:\\
+- If the letter is in the alphabet, shift it by 'k' positions.\\
+- If the resulting letter goes beyond 'z', wrap around to the beginning of the alphabet.\\
+- Maintain the case (uppercase or lowercase) of the original letter.\\
+- Leave non-alphabetic characters unchanged.\\
+3. The resulting sequence of letters forms the ciphertext.\\
+
+For example: \\
+Let's demonstrate the Caesar Cipher with a shift of 3 (k=3):\\
+- Plaintext: "HELLO WORLD"\\
+- Encrypted: "KHOOR ZRUOG"\\
+Explanation: The letter 'H' is shifted by 3 positions to become 'K' and success
+
+\subsection{Security}
+While the Caesar Cipher was effective in ancient times, it is highly vulnerable to modern cryptographic attacks due to its simplicity. The limited number of possible keys (27 in the case of the Spanish alphabet) makes it susceptible to brute force attacks where all possible combinations are tried until the correct decryption is found. Additionally, frequency analysis, which exploits the statistical properties of languages, can often be used to decrypt messages encrypted with the Caesar Cipher.
+
+\subsection{Conclusion}
+The Caesar Cipher, despite its lack of security by modern standards, remains a valuable educational tool for introducing the concept of encryption. Its simplicity and historical significance make it an essential starting point for understanding more complex cryptographic techniques. However, it is essential to recognize its limitations and the need for stronger encryption methods for securing sensitive information in contemporary contexts.
+
+\printbibliography
+
+\end{document}

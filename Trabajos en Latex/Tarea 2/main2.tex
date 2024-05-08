@@ -1,0 +1,84 @@
+\documentclass[a4,10pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[
+backend=biber,
+style=ieee,
+]{biblatex}
+
+\addbibresource{ref.bib}
+
+\pagestyle{fancy}
+\fancyhead[LO,L]{ FINESI}
+\fancyhead[CO,C]{Software Engineering}
+\fancyhead[RO,R]{\today}
+\fancyfoot[LO,L]{Joseph Fernando Incaluque Bravo}
+\fancyfoot[CO,C]{}
+\fancyfoot[RO,R]{Page. \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{Software Engineering}
+
+\begin{document}
+
+\section{Entropy of the book in python}
+
+I applied entropy to Dross's book.
+
+\begin{lstlisting}[language=Python]
+	from collections import Counter
+	import math
+	import pandas as pd
+	
+	filename = '/content/cuento.txt'
+	with open(filename, 'r') as file:
+	content = file.read()
+	words = content.split()
+	
+	count_words = pd.Series(Counter(words))
+	total_words = len(words)
+	entropy = 0
+	
+	def shannon_entropy(p):
+	return -p * math.log2(p)
+	
+	for word, count in count_words.items():
+	p = count / total_words
+	entropy += shannon_entropy(p)
+	
+	print(f"Palabras: {count_words}")
+	print(f"Entropia: {entropy}")
+
+\end{lstlisting}
+
+hola que hace
+
+
+\subsection{Results}
+
+Palabras: \\
+Valle          35 \\
+de                     4250 \\
+la                     3113 \\
+calma                    11 \\
+www.lectulandia.com     220 \\
+... 						\\
+alegró.                   1 \\
+universo,                 1 \\
+infinito.                 1 \\
+220                       1 \\
+221                       1 \\
+Length: 18334, dtype: int64 \\
+Entropía: 10.496599886769218 \\
+
+
+\printbibliography
+
+\end{document}

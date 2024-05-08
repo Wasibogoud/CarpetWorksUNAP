@@ -1,0 +1,127 @@
+\documentclass[a4,10pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[
+backend=biber,
+style=ieee,
+]{biblatex}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+}
+
+\addbibresource{ref.bib}
+
+\pagestyle{fancy}
+\fancyhead[LO,L]{ FINESI}
+\fancyhead[CO,C]{Software Engineering}
+\fancyhead[RO,R]{\today}
+\fancyfoot[LO,L]{Joseph Fernando Incaluque Bravo}
+\fancyfoot[CO,C]{}
+\fancyfoot[RO,R]{Page. \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{Software Engineering}
+
+\begin{document}
+
+\section{Sixth principle of the Zen of Python explained and applied.}
+
+
+"Spacing is better than dense," is the sixth principle of the Zen of Python, which indicates that the code we have should not be tightly packed so that variables can be recognized more easily by any developer's glance. 
+
+\subsection{Example in C++}
+\begin{lstlisting}[language=C++,linewidth=12cm,basicstyle=\footnotesize]
+	//Aplicacion correcta del principio del codigo en C++
+	//Codigo de que genera aleatorios entre 20 y 80 y resuelve un operacion
+	#include <iostream>
+	#include <cstdlib>
+	#include <ctime>
+	#include <cmath>
+	
+	#define PI 3.141592 // Definicion del valor de PI
+	
+	using namespace std;
+	
+	int main() {
+		int max, min;
+		printf("\nIngrese valor <max>: ");
+		scanf("%d", &max);
+		printf("Ingrese valor <min>: ");
+		scanf("%d", &min);
+		
+		srand(time(NULL));
+		int ale = rand() % (max - min + 1) + min;
+		float rad = ale * (PI / 180), Fx = 0;
+		
+		if (80 > ale && ale > 50) {
+			// Calcula numero * (sin^2(num))
+			Fx = ale * pow(sin(rad), 2);
+			printf("\nNumero generado: %d\n", ale);
+			printf("num * (sin^2(rad)): %.2f\n", Fx);
+		} else if (20 < ale && ale < 40) {
+			// Calcula (2 * cos(num)) / num
+			if (ale == 0) {
+				cout << "\nNo se puede dividir por cero." << endl;
+			} else {
+				Fx = (2 * cos(rad)) / ale;
+				printf("\nNumero generado: %d\n", ale);
+				printf("(2 * cos(rad)) / num: %.2f\n", Fx);
+			}
+		} else {
+			// Calcula ((3 * tan(num)) - (2 * sin(num))) / (num + 2)
+			if (ale == -2) {
+				cout << "\nNo se puede dividir por -2." << endl;
+			} else {
+				Fx = ((3 * tn(rad)) - (2 * sin(rad))) / (ale + 2);
+				printf("\nNumero generado: %d\n", ale);
+				printf("((3 * tn(rad)) - (2 * sin(rad))) / (num + 2): %.2f\n", Fx);
+			}
+		}
+		
+		return 0;
+	}
+	
+\end{lstlisting}
+
+\subsection{Example y Python}
+
+\begin{lstlisting}[language=Python]
+	# Aplicacion correcta del principio del codigo en python
+	# Programa que calcula el factorial de n
+	import math
+	
+	def factorial(n):
+	if n == 0:
+	return 1
+	else:
+	return math.factorial(n)
+	
+	def main():
+	A = 1
+	while A != 0:
+	A = int(input("Ingrese <A>: "))
+	if A == 0:
+	break
+	V = int(input("Ingrese <V>: "))
+	for i in range(1, V + 1):
+	n = int(input("Ingrese <n>: "))
+	fac = factorial(n)
+	print("El factorial de <%d> es: %d" % (n, fac))
+	
+	if __name__ == "__main__":
+	main()
+\end{lstlisting}
+
+\printbibliography
+
+\end{document}
