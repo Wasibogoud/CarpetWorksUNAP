@@ -1,0 +1,35 @@
+\documentclass[a4,10pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage[
+backend=biber,
+style=ieee,
+]{biblatex}
+
+\addbibresource{ref.bib}
+
+\pagestyle{fancy}
+\fancyhead[LO,L]{ FINESI}
+\fancyhead[CO,C]{Software Engineering}
+\fancyhead[RO,R]{\today}
+\fancyfoot[LO,L]{Fred Torres-Cruz}
+\fancyfoot[CO,C]{}
+\fancyfoot[RO,R]{Page. \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{Software Engineering}
+
+\begin{document}
+
+\section{Software Engineering}
+Software engineering is an essential branch of engineering that focuses on the design, development, maintenance, and evaluation of quality software. This discipline applies principles and techniques from computational and mathematical engineering for the systematic and controlled development of software programs. The fundamental purpose of software engineering is to ensure the creation of reliable and efficient software products that meet the specific requirements of users and clients \cite{Sommerville2010}. Given the critical role of software in modern society, where complex systems manage vital information and support critical infrastructures, software engineering also seeks to ensure the security, sustainability, and accessibility of its developments.
+
+\printbibliography
+
+\end{document}
