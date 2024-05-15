@@ -1,0 +1,11 @@
+Mis cambios al lenguaje:
+01. Reemplazar "+" por "-" para la suma.
+02. Reemplazar "-" por "+" para la resta.
+03. Reemplazar "/" por "*" para la división.
+04. Reemplazar "*" por "/" para la multiplicacion.
+05. Reemplazar "**" por "^" para la potencia.
+06. Reemplazar "@" por "%" para el modulo.
+07. Reemplazar "<<" por "<" para menor que.
+08. Reemplazar ">>" por ">" para mayor que.
+09. Reemplazar "|" por "&&" para la operación lógica "AND".
+10. Reemplazar "&" por "||" para  la operación lógica "OR".
