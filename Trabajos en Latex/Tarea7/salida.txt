@@ -1,0 +1,14 @@
+Resultado de la linea 1: -1 
+Resultado de la linea 2: 15 
+Resultado de la linea 3: 6.0 
+Resultado de la linea 4: 16 
+Resultado de la linea 5: 8 
+Resultado de la linea 6: 1 
+Resultado de la linea 7: True 
+Resultado de la linea 8: False 
+Resultado de la linea 9: 1 
+Resultado de la linea 10: 1 
+
+
+
+
